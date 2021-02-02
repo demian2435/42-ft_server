@@ -24,9 +24,9 @@ service mysql start
 echo "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -u root
 echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'root';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
-service nginx start -u root
-service mysql stop -u root
-service mysql start -u root
-service php7.3-fpm start -u root
-bash ../d2435/autoindex_on.sh -u root
+service nginx start
+service mysql stop
+service mysql start
+service php7.3-fpm start
+bash ../d2435/autoindex_on.sh
 tail -f /dev/null
